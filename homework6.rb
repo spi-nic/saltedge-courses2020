@@ -1,3 +1,4 @@
+
 #  problem 1
 # Use the each method of Array to
 # iterate over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -78,9 +79,13 @@ puts
 # problem 8
 #Suppose you have a hash h = { a:1, b:2, c:3, d:4 }
 h = { a:1, b:2, c:3, d:4 }
+puts h[:b]
+h[:e]=5
+print h
+h.delete_if {|k,v| v.to_f < 3.5}
 puts
-
-
+print h
+puts
 # problem 9
 #Can hash values be arrays? Yes  hash = {}; hash = { "1":[1,2,3], "2":[ "a", "b", "c"], "c":["ruby", 11, 22, "rails"]}
 # Can you have an array of hashes? (give examples) Yes
@@ -150,7 +155,7 @@ puts
 
 # problem 14
 #What will the following program output?
-hash1 = {shoes: "nike", "hat" => "adidas", :hoodie => true}
+hash1 = {:shoes => "nike", "hat" => "adidas", :hoodie => true}
 hash2 = {"hat" => "adidas", :shoes => "nike", hoodie: true}
 
 if hash1 == hash2
@@ -168,6 +173,7 @@ puts
 contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
 arr_f=["email", :"address", "phone"]
+
 contacts.each_with_index do |(key, value), index|
   arr_f.each do |element|
     value[element] =contact_data[index].shift
